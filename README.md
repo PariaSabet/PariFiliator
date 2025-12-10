@@ -1,0 +1,2 @@
+# PariFiliator
+amazon affiliate linker
