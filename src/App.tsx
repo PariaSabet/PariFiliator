@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-// TODO: Replace with your actual Amazon Associate tag
 const AFFILIATE_TAG = "pariasabet09-20";
 
 function App() {
@@ -94,22 +93,7 @@ function App() {
       }}
     >
       {/* Container - .container */}
-      <div
-      // className="relative w-[450px] h-[600px] rounded-[30px] flex justify-center items-center shadow-2xl overflow-hidden"
-      >
-        {/* Circles */}
-        {/* <div 
-          className="absolute rounded-full top-[40px] left-[60px] w-[150px] h-[150px]"
-          style={{ background: 'linear-gradient(to top right, #a20434, #f7bb9c)' }}
-        />
-        <div 
-          className="absolute rounded-full top-[200px] right-[30px] w-[230px] h-[230px]"
-          style={{ background: 'linear-gradient(to top right, #38594b 50%, #e1a4b3 85%)' }}
-        />
-        <div 
-          className="absolute rounded-full bottom-[80px] left-[105px] w-[125px] h-[125px]"
-          style={{ background: 'linear-gradient(to top right, #f65a45, #ffc7c0)' }}
-        /> */}
+      <div>
 
         {/* Content - .content */}
         <div className="relative z-10 w-[280px] h-[480px] bg-white/15 rounded-[15px] border border-white/25 shadow-[0_4px_6px_rgba(0,0,0,0.1)] backdrop-blur-[30px] flex flex-col items-center pt-8 pb-4 px-4">
@@ -118,7 +102,6 @@ function App() {
             <h1 className="text-outline font-poppins text-[42px] leading-tight tracking-[-2px] m-0">
               Pariffiliator
             </h1>
-            {/* <div className="w-[150%] h-px border-t border-white/50 -mt-[5px]" /> */}
           </div>
 
           {/* Form Area (Replacing empty space) */}
@@ -155,9 +138,14 @@ function App() {
             {generatedLink && (
               <div className="w-full mt-2 animate-in fade-in slide-in-from-bottom-2">
                 <div className="bg-white/20 border border-white/30 rounded-lg p-2 flex flex-col gap-2">
-                  <div className="text-white/90 text-[10px] font-karla break-all line-clamp-2">
+                  <a 
+                    href={generatedLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/90 text-[10px] font-karla break-all line-clamp-2 hover:text-white hover:underline transition-colors text-center"
+                  >
                     {generatedLink}
-                  </div>
+                  </a>
                   <button
                     onClick={copyToClipboard}
                     className="w-full py-1 bg-white/40 hover:bg-white/50 rounded text-white text-xs font-bold uppercase tracking-wider"
@@ -168,13 +156,6 @@ function App() {
               </div>
             )}
           </div>
-
-          {/* Glass Label Footer - .glass */}
-          {/* <div className="w-[85%] bg-white/35 rounded-[15px] py-1 shadow-[0_10px_15px_rgba(0,0,0,0.15)] mt-auto mb-2 flex justify-center items-center">
-            <p className="font-karla text-white text-[18px] transform scale-y-[0.65] m-0 tracking-wider">
-              PARIFFILIATOR
-            </p>
-          </div> */}
         </div>
       </div>
     </div>
