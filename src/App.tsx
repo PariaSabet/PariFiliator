@@ -43,7 +43,10 @@ function App() {
 
       const url = new URL(urlStr);
 
-      if (!url.hostname.includes("amazon")) {
+      if (
+        !url.hostname.includes("amazon") &&
+        !["a.co", "amzn.to"].includes(url.hostname)
+      ) {
         setError("Not an Amazon URL");
         setLoading(false);
         return;
