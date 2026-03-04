@@ -87,6 +87,15 @@ function App() {
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const pasteFromClipboard = async () => {
+    try {
+      const text = await navigator.clipboard.readText();
+      if (text?.trim()) setInputUrl(text.trim());
+    } catch {
+      // Clipboard access denied or unavailable
+    }
+  };
+
   return (
     <div
       className="min-h-screen w-full flex items-center justify-center bg-gray-50"
@@ -114,6 +123,7 @@ function App() {
               placeholder="Paste Amazon link..."
               value={inputUrl}
               onChange={(e) => setInputUrl(e.target.value)}
+              onFocus={pasteFromClipboard}
               onKeyDown={(e) => {
                 if (e.key === "Enter" && !loading) {
                   generateLink();
